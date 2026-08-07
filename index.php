@@ -3,6 +3,12 @@
 require_once 'config/config.php';
 require_once 'config/autoload.php';
 
+// On empêche PHP d'afficher directement les erreurs techniques (warnings, notices, deprecated...)
+// Le try/catch plus bas ne suffit pas à lui seul : il ne capture que les exceptions/erreurs
+// explicitement levées, pas les messages que PHP affiche spontanément.
+ini_set('display_errors', '0');
+error_reporting(E_ALL);
+
 $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
 try {
@@ -108,9 +114,12 @@ try {
             $view->render("404");
             exit;
     }
-} catch (Exception $e) {
-    // On n'affiche jamais le message technique de l'exception à l'utilisateur :
-    // ça pourrait révéler des détails internes (structure de la BDD, chemins serveur, etc.)
+} catch (Throwable $e) {
+    // Throwable (et non Exception) pour couvrir aussi les erreurs fatales PHP
+    // (TypeError, erreur de type d'argument, division par zéro, etc.), pas seulement
+    // les exceptions qu'on lève nous-mêmes volontairement.
+    // On n'affiche jamais le message technique à l'utilisateur : ça pourrait révéler
+    // des détails internes (structure de la BDD, chemins serveur, etc.)
     http_response_code(500);
     echo "Une erreur est survenue. Merci de réessayer plus tard.";
 }
