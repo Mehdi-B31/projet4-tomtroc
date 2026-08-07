@@ -1,12 +1,11 @@
 <?php
 
 class HomeController {
-    public function showHome() {
+    public function showHome() : void {
         $bookManager = new BookManager();
-        $books = $bookManager->getAllBooks();
-        
-        foreach ($books as $book) {
-            echo $book['title'] . ' - ' . $book['author'] . '<br>';
-        }
+        $books = $bookManager->getLastBooks();
+
+        $view = new View('Accueil');
+        $view->render('home', ['books' => $books]);
     }
 }

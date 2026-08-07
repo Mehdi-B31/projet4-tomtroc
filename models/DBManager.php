@@ -17,4 +17,11 @@ class DBManager {
         $stmt->execute($params);
         return $stmt;
     }
+
+    /**
+     * Retourne l'id auto-incrémenté généré par le dernier INSERT.
+     */
+    public function lastInsertId() : string {
+        return $this->pdo->lastInsertId();
+    }
 }
