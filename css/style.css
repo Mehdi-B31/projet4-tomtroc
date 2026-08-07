@@ -1,0 +1,1136 @@
+/* ══════════════════════════════════════
+   RESET ET BASE
+══════════════════════════════════════ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9F9F6;
+    color: #2c2c2c;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* ══════════════════════════════════════
+   PLACEHOLDER IMAGES
+══════════════════════════════════════ */
+.image-placeholder {
+    background-color: #EAEAEA;
+}
+
+.book-cover {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* ══════════════════════════════════════
+   HEADER
+══════════════════════════════════════ */
+header {
+    background-color: white;
+    padding: 16px 40px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #00AC66;
+}
+
+.logo-icon {
+    background-color: #00AC66;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+    font-size: 15px;
+}
+
+nav a {
+    color: #2c2c2c;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #00AC66;
+}
+
+.icon-link {
+    font-size: 18px;
+    color: #2c2c2c;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.icon-link:hover {
+    color: #00AC66;
+}
+
+.notif-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+}
+
+/* ══════════════════════════════════════
+   BOUTONS
+══════════════════════════════════════ */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-primary {
+    background-color: #00AC66;
+    color: white;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    border: 2px solid #00AC66;
+    color: #00AC66;
+}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    width: 50%;
+    min-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 36px;
+}
+
+.hero-image {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ══════════════════════════════════════
+   SECTION LIVRES
+══════════════════════════════════════ */
+.section-books {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.section-books h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 48px;
+}
+
+.book-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s;
+    display: block;
+    color: inherit;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+}
+
+.book-card-body {
+    padding: 16px;
+}
+
+.book-card-title {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+}
+
+.book-card-author {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.book-card-seller {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.avatar-mini {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #00AC66;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.section-center {
+    text-align: center;
+}
+
+/* ══════════════════════════════════════
+   SECTION COMMENT CA MARCHE
+══════════════════════════════════════ */
+.section-how {
+    background-color: #F0F0EA;
+    padding: 80px 40px;
+    margin: 80px 0;
+}
+
+.section-how-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-how h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 48px;
+    font-size: 15px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.step-card {
+    width: 25%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ══════════════════════════════════════
+   BANNIERE PLEINE LARGEUR
+══════════════════════════════════════ */
+.banner-image {
+    width: 100vw;
+    max-width: 100%;
+    height: 250px;
+    background-color: #EAEAEA;
+    margin: 3rem 0;
+}
+
+/* ══════════════════════════════════════
+   SECTION NOS VALEURS
+══════════════════════════════════════ */
+.section-values {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.section-values h2 {
+    font-size: 36px;
+    margin-bottom: 32px;
+}
+
+.section-values p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.heart-svg {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    font-size: 13px;
+    color: #888;
+}
+
+.footer-logo {
+    background-color: #00AC66;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* ══════════════════════════════════════
+   FORMULAIRES
+══════════════════════════════════════ */
+.form-container {
+    max-width: 480px;
+    margin: 80px auto;
+    padding: 48px 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.form-container h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00AC66;
+}
+
+.form-container .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-link a {
+    color: #00AC66;
+    font-weight: 500;
+}
+
+/* ══════════════════════════════════════
+   ALERTES
+══════════════════════════════════════ */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert-error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.alert-success {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+nav a {
+    white-space: nowrap;
+}
+
+.separator-placeholder {
+    width: 100vw;
+    max-width: 100%;
+    height: 250px;
+    background-color: #EAEAEA;
+    margin: 4rem 0;
+}
+
+/* ══════════════════════════════════════
+   PAGE MON COMPTE
+══════════════════════════════════════ */
+.page-title {
+    max-width: 1200px;
+    margin: 48px auto 32px;
+    padding: 0 40px;
+    font-size: 32px;
+}
+
+.account-cards {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 40px;
+    display: flex;
+    gap: 24px;
+}
+
+.account-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 40px;
+    flex: 1;
+}
+
+.account-card-profile {
+    text-align: center;
+}
+
+.account-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.account-avatar-edit {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    text-decoration: underline;
+    margin-bottom: 24px;
+}
+
+.account-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-bottom: 24px;
+}
+
+.account-username {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.account-member-since {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.account-library-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.account-library-count {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.account-form-title {
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+/* ══════════════════════════════════════
+   TABLEAU BIBLIOTHEQUE
+══════════════════════════════════════ */
+.library-table-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 40px;
+}
+
+.profile-public-table-wrapper {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+.library-table {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.library-table th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: #999;
+    text-transform: uppercase;
+    padding: 20px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.library-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.library-table tbody tr:nth-child(even) {
+    background-color: #EDF2F6;
+}
+
+.library-book-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.library-description {
+    color: #666;
+    font-style: italic;
+    max-width: 260px;
+}
+
+.library-empty {
+    text-align: center;
+    color: #888;
+    padding: 40px 16px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+}
+
+.status-available {
+    background-color: #00AC66;
+}
+
+.status-unavailable {
+    background-color: #C0503E;
+}
+
+.library-actions {
+    white-space: nowrap;
+}
+
+.action-edit {
+    color: #292929;
+    text-decoration: underline;
+    font-size: 13px;
+    margin-right: 16px;
+}
+
+.action-delete {
+    color: #C0503E;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+/* ══════════════════════════════════════
+   PAGE NOS LIVRES A L'ECHANGE
+══════════════════════════════════════ */
+.books-header {
+    max-width: 1200px;
+    margin: 48px auto 32px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.books-header .page-title {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    pointer-events: none;
+}
+
+.search-form input {
+    padding: 10px 16px 10px 38px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    width: 260px;
+    background-color: #F9F9F6;
+}
+
+.search-form input:focus {
+    outline: none;
+    border-color: #00AC66;
+}
+
+.books-grid-page {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* ══════════════════════════════════════
+   MESSAGERIE
+══════════════════════════════════════ */
+.messaging-page {
+    display: flex;
+    min-height: 600px;
+    border-top: 1px solid #eee;
+}
+
+.messaging-sidebar {
+    width: 340px;
+    flex-shrink: 0;
+    background-color: #F4F3EE;
+    border-right: 1px solid #e5e5e0;
+}
+
+.messaging-sidebar-header {
+    padding: 32px 24px 20px;
+}
+
+.messaging-title {
+    font-size: 26px;
+}
+
+.conversation-item {
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px;
+    align-items: flex-start;
+    color: inherit;
+}
+
+.conversation-item-active {
+    background-color: white;
+}
+
+.conversation-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.conversation-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.conversation-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.conversation-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.conversation-time {
+    font-size: 12px;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.conversation-preview {
+    font-size: 13px;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+.messaging-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 40px;
+}
+
+.messaging-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.messaging-chat-header-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.messaging-thread {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.message-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+.message-row-sent {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.message-row-received {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.message-received-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.avatar-mini-msg {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-meta {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.message-bubble {
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.message-bubble-sent {
+    background-color: #EDF2F6;
+}
+
+.message-bubble-received {
+    background-color: white;
+    border: 1px solid #eee;
+}
+
+.messaging-input-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.messaging-input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.messaging-input:focus {
+    outline: none;
+    border-color: #00AC66;
+}
+
+.messaging-empty {
+    padding: 24px;
+    color: #888;
+    font-size: 14px;
+}
+
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 40px;
+    font-size: 13px;
+    color: #888;
+}
+
+.breadcrumb a {
+    color: #888;
+}
+
+.book-detail-page {
+    max-width: 1200px;
+    margin: 24px auto 60px;
+    padding: 0 40px;
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.book-detail-image {
+    flex: 1;
+}
+
+.book-detail-image img {
+    width: 100%;
+    max-height: 720px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-detail-content {
+    flex: 1;
+    padding-top: 8px;
+}
+
+.book-detail-title {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.book-detail-author {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.book-detail-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    width: 60px;
+    margin: 0 0 28px;
+}
+
+.book-detail-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.book-detail-description {
+    margin-bottom: 32px;
+}
+
+.book-detail-description p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 14px;
+}
+
+.book-detail-owner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.avatar-medium {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-medium-fallback {
+    background-color: #00AC66;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.book-detail-message-btn {
+    display: inline-block;
+    padding: 16px 32px;
+}
+
+.account-add-book-btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+    padding: 8px 18px;
+}
+
+/* ══════════════════════════════════════
+   FORMULAIRE AJOUT / EDITION LIVRE
+══════════════════════════════════════ */
+.back-link {
+    display: block;
+    max-width: 1000px;
+    margin: 32px auto 0;
+    padding: 0 40px;
+    color: #888;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.book-form-card {
+    max-width: 1000px;
+    margin: 24px auto 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.book-form {
+    display: flex;
+    gap: 48px;
+}
+
+.book-form-photo {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.book-form-photo label {
+    display: block;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.book-form-photo-preview {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.book-form-photo-label {
+    display: inline-block;
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #292929;
+}
+
+.book-form-photo-input {
+    display: none;
+}
+
+.book-form-fields {
+    flex: 1;
+}
+
+.book-form-fields textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    resize: vertical;
+}
+
+.book-form-fields select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    background: white;
+}
+
+/* ══════════════════════════════════════
+   PAGES D'ERREUR (404 / 500)
+══════════════════════════════════════ */
+.error-page {
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.error-page .page-title {
+    max-width: none;
+    margin: 0 0 16px;
+    padding: 0;
+    font-size: 64px;
+}
+
+.error-message {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
