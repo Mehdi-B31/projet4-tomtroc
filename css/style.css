@@ -65,7 +65,7 @@ header {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
 }
 
 .logo {
@@ -126,6 +126,17 @@ nav a:hover {
     height: 8px;
     background-color: #1a1a1a;
     border-radius: 50%;
+}
+
+.notif-badge {
+    position: absolute;
+    right: -8px;
+    top: 2px;
+}
+
+.logout-link {
+    color: #292929;
+    font-weight: 500;
 }
 
 /* ══════════════════════════════════════
@@ -195,6 +206,30 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.hero-photo {
+    width: 100%;
+    max-width: 400px;
+    height: 540px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.hero-credit {
+    text-align: right;
+    max-width: 400px;
+    margin-top: 8px;
+}
+
+.banner-shelves {
+    width: 100vw;
+    max-width: 100%;
+    height: 250px;
+    background-image: url('/assets/images/banner-shelves.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 4rem 0;
 }
 
 /* ══════════════════════════════════════
@@ -395,8 +430,47 @@ footer {
 }
 
 /* ══════════════════════════════════════
-   FORMULAIRES
+   CONNEXION / INSCRIPTION
 ══════════════════════════════════════ */
+.auth-page {
+    display: flex;
+    min-height: 700px;
+}
+
+.auth-form-side {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+}
+
+.auth-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 24px;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.auth-image-side {
+    width: 55%;
+    background-image: url('/assets/images/auth-bookshelf.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
 .form-container {
     max-width: 480px;
     margin: 80px auto;
@@ -453,12 +527,15 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
-    color: #666;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #292929;
 }
 
 .form-link a {
-    color: #00AC66;
-    font-weight: 500;
+    color: #292929;
+    font-weight: 400;
+    text-decoration: underline;
 }
 
 /* ══════════════════════════════════════
@@ -484,14 +561,6 @@ footer {
 }
 nav a {
     white-space: nowrap;
-}
-
-.separator-placeholder {
-    width: 100vw;
-    max-width: 100%;
-    height: 250px;
-    background-color: #EAEAEA;
-    margin: 4rem 0;
 }
 
 /* ══════════════════════════════════════
