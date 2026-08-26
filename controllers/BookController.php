@@ -1,11 +1,13 @@
 <?php
 
-class BookController {
+class BookController
+{
 
     /**
      * Affiche la liste des livres disponibles, avec recherche optionnelle par titre.
      */
-    public function showList() : void {
+    public function showList() : void
+    {
         $search = isset($_GET['search']) ? trim($_GET['search']) : null;
 
         $bookManager = new BookManager();
@@ -22,7 +24,8 @@ class BookController {
     /**
      * Affiche le détail d'un livre.
      */
-    public function showDetail() : void {
+    public function showDetail() : void
+    {
         $bookId = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
         $bookManager = new BookManager();
@@ -42,7 +45,8 @@ class BookController {
     /**
      * Affiche le formulaire d'ajout d'un livre.
      */
-    public function showAddForm() : void {
+    public function showAddForm() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;
@@ -58,7 +62,8 @@ class BookController {
     /**
      * Traite l'ajout d'un livre, avec upload de photo optionnel.
      */
-    public function create() : void {
+    public function create() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;
@@ -87,7 +92,8 @@ class BookController {
     /**
      * Affiche le formulaire d'édition d'un livre existant, pré-rempli.
      */
-    public function showEditForm() : void {
+    public function showEditForm() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;
@@ -114,7 +120,8 @@ class BookController {
     /**
      * Traite la modification d'un livre existant.
      */
-    public function update() : void {
+    public function update() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;
@@ -146,7 +153,8 @@ class BookController {
      * de fichier unique, déplace le fichier vers assets/images/books/.
      * Retourne le nom du fichier stocké, ou null si aucune photo envoyée / erreur.
      */
-    private function handleImageUpload() : ?string {
+    private function handleImageUpload() : ?string
+    {
         if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
             return null;
         }
@@ -179,7 +187,8 @@ class BookController {
     /**
      * Supprime un livre appartenant à l'utilisateur connecté, puis retourne sur "Mon compte".
      */
-    public function delete() : void {
+    public function delete() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;

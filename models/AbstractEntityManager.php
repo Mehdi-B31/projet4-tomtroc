@@ -1,9 +1,11 @@
 <?php
 
-abstract class AbstractEntityManager {
+abstract class AbstractEntityManager
+{
     protected $db;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = new DBManager();
     }
 }

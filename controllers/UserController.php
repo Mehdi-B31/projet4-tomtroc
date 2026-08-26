@@ -1,11 +1,13 @@
 <?php
 
-class UserController {
+class UserController
+{
 
     /**
      * Affiche le formulaire d'inscription.
      */
-    public function showRegister() : void {
+    public function showRegister() : void
+    {
         $view = new View("Inscription");
         $view->render("register");
     }
@@ -13,7 +15,8 @@ class UserController {
     /**
      * Traite l'inscription d'un utilisateur.
      */
-    public function register() : void {
+    public function register() : void
+    {
         $username = $_POST['username'] ?? '';
         $email = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
@@ -33,7 +36,8 @@ class UserController {
     /**
      * Affiche le formulaire de connexion.
      */
-    public function showLogin() : void {
+    public function showLogin() : void
+    {
         $view = new View("Connexion");
         $view->render("login");
     }
@@ -41,7 +45,8 @@ class UserController {
     /**
      * Traite la connexion d'un utilisateur.
      */
-    public function login() : void {
+    public function login() : void
+    {
         $email = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
 
@@ -66,7 +71,8 @@ class UserController {
     /**
      * Deconnecte l'utilisateur.
      */
-    public function logout() : void {
+    public function logout() : void
+    {
         unset($_SESSION['user']);
         header('Location: index.php?action=home');
         exit;
@@ -75,7 +81,8 @@ class UserController {
     /**
      * Affiche la page "Mon compte" : infos personnelles + bibliothèque.
      */
-    public function showAccount() : void {
+    public function showAccount() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;
@@ -99,7 +106,8 @@ class UserController {
     /**
      * Traite la mise à jour du profil (email, pseudo, mot de passe optionnel).
      */
-    public function updateAccount() : void {
+    public function updateAccount() : void
+    {
         if (!isset($_SESSION['user'])) {
             header('Location: index.php?action=login');
             exit;
@@ -128,7 +136,8 @@ class UserController {
     /**
      * Affiche le profil public d'un utilisateur (consultable par tous, sans modification).
      */
-    public function showPublicProfile() : void {
+    public function showPublicProfile() : void
+    {
         $userId = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
         $userManager = new UserManager();

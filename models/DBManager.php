@@ -1,9 +1,11 @@
 <?php
 
-class DBManager {
+class DBManager
+{
     private $pdo;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->pdo = new PDO(
             'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME,
             DB_USER,
@@ -12,7 +14,8 @@ class DBManager {
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public function query(string $sql, array $params = []) {
+    public function query(string $sql, array $params = [])
+    {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         return $stmt;
@@ -21,7 +24,8 @@ class DBManager {
     /**
      * Retourne l'id auto-incrémenté généré par le dernier INSERT.
      */
-    public function lastInsertId() : string {
+    public function lastInsertId() : string
+    {
         return $this->pdo->lastInsertId();
     }
 }
